@@ -1,38 +1,49 @@
-import java.io.BufferedReader;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-CountingMethods count = new CountingMethods();
+        CountingMethods count = new CountingMethods();
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Please, enter your first number: ");
-        double nb1 = sc.nextDouble();
+        char method;
+        double number1;
+        double number2;
+        while (true) {
 
 
-        System.out.println("Please, enter your second number: ");
-        double nb2 = sc.nextDouble();
+            System.out.println("Choose an operation: +, -, *, / or q(for quit): ");
+            String chosenMethod = sc.next();
+            method = chosenMethod.charAt(0);
+            if (method == 'q') return;
 
-        System.out.println("Choose an operation: +, -, * or / : ");
-        String chosenMetod = sc.next();
+            System.out.println("Please, enter your first number: ");
+            number1 = sc.nextDouble();
 
 
+            System.out.println("Please, enter your second number: ");
+            number2 = sc.nextDouble();
 
 
-        switch (chosenMetod.charAt(0)) {
-            case '+':
-                System.out.println(count.addition(nb1,nb2));
-            break;
-            case '-':
-                System.out.println(count.subtraction(nb1,nb2));
-                break;
-            case '*':
-                System.out.println(count.multiplication(nb1,nb2));
-                break;
-            case '/':
-                System.out.println(count.division(nb1,nb2));
-                break;
+            switch (method) {
+                case '+':
+                    System.out.println("NR1: "+ number1);
+                    System.out.println("NR2: "+ number2);
+                    System.out.println(count.addition(number1, number2));
+                    break;
+                case '-':
+                    System.out.println(count.subtraction(number1, number2));
+                    break;
+                case '*':
+                    System.out.println(count.multiplication(number1, number2));
+                    break;
+                case '/':
+                    System.out.println(count.division(number1, number2));
+                    break;
+
+
             }
         }
     }
+}
