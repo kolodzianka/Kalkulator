@@ -8,7 +8,7 @@ class CountingMethodsTest {
     CountingMethods count;
 
     @BeforeEach
-    public void setUp(){
+    public void before(){
         count = new CountingMethods();
 
     }
@@ -40,6 +40,16 @@ class CountingMethodsTest {
         double b = 3;
         assertEquals(2.0,count.division(a,b));
     }
+
+    @Test
+    public void divisionByZero() {
+        double a = 6;
+        double b = 0;
+        assertThrows(ArithmeticException.class, () -> new CountingMethods().division(======a,b) ) ;
+    }
+
+
+
 
 
 

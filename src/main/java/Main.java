@@ -1,5 +1,5 @@
-import java.io.*;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         char method;
-        double number1;
+        Double number1;
         double number2;
         while (true) {
 
